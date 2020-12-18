@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<busInterface>
+    <name>AXI</name>
+    <ports>
+        <port name='o_valid'>
+            <msb>0</msb>
+            <lsb>0</lsb>
+            <direction>out</direction>
+        </port>
+        <port name='i_ready'>
+            <msb>0</msb>
+            <lsb>0</lsb>
+            <direction>in</direction>
+        </port>
+        <port name='o_addr'>
+            <msb>31</msb>
+            <lsb>0</lsb>
+            <direction>out</direction>
+        </port>
+    </ports>
+</busInterface>
