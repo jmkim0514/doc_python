@@ -1,0 +1,1 @@
+<ip><name>ip_name</name><ports><port name="valid"><direction>out</direction><left>0</left><right>0</right></port><port name="ready"><direction>in</direction><left>0</left><right>0</right></port><port name="addr"><direction>out</direction><left>31</left><right>0</right></port></ports></ip>
