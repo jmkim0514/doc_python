@@ -1,13 +1,63 @@
-# List Comprehension
-```python
-if 
-else:
+-------------------------------------------------------------------------
+IF
+-------------------------------------------------------------------------
+if condition: x=1
+else        : x=0
+===
+x=1 if condition else 0
 
-```
+
+if a >100: print ('too big')
+elif a>10: print ('big')
+else     : print ('small')
+===
+print ('too big') if a>100 else print('bit) if a>10 else print('small')
 
 
-1. Set Comprehension
 
-2. Dict comprehension
 
-3. Generator Expression
+
+-------------------------------------------------------------------------
+Comprehension
+1. List Comprehension
+
+data = [i*i for i in range(4)]
+==> [0, 1, 4, 9]
+data = [i*i for i in range(4) if i % 2 == 0] # 짝수만
+==> [0, 4]
+
+maze = [[(r, c) for c in range(size)] for r in range(size)]
+==> [[(0, 0), (0, 1)], [(1, 0), (1, 1)]]
+non_squars = [x for x in range(10) if sqrt(x)**2 != x]
+# a^2 + b^2 = c^2 (a < b < c)를 만족하는 피타고라스 방정식의 해를 찾는 LC
+solutions = [(x, y, z) for x in range(1, 30) for y in range(x, 30) for z in range(y, 30) if x**2 + y**2 == z**2]
+# 단어에서 모음을 제거하는 LC
+word = 'mathematics'
+without_vowels = ''.join([c for c in word if c not in ['a', 'e', 'i', 'o', 'u']])
+# 'mthmtcs'
+
+# 행렬을 일차원화 시키는 LC
+matrix = [
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+]
+flatten = [e for r in matrix for e in r]
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+2. Set Comprehension
+
+3. Dict comprehension
+# 두 리스트를 하나의 dict로 합치는 DC. 하나는 key, 또 다른 하나는 value로 사용한다
+subjects = ['math', 'history', 'english', 'computer engineering']
+scores = [90, 80, 95, 100]
+score_dict = {key: value for key, value in zip(subjects, scores)}
+# {'math': 90, 'history': 80, 'english': 95, 'computer engineering': 100}
+
+# 튜플 리스트를 dict 형태로 변환하는 DC
+score_tuples = [('math', 90), ('history', 80), ('english', 95), ('computer engineering', 100)]
+score_dict = {t[0]: t[1] for t in score_tuples}
+# {'math': 90, 'history': 80, 'english': 95, 'computer engineering': 100}
+
+
+
